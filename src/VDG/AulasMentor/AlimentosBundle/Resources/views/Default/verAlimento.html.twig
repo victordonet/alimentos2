@@ -1,7 +1,7 @@
-{% extends 'VDGAulasMentosAlimentosBundle:Default:layout.html.twig' %}
+{% extends 'VDGAulasMentorAlimentosBundle:Default:layout.html.twig' %}
 {% block contenido %}
     <h3>
-        <a href="http://es.wikipedia.org/wiki/<?php echo $params['nombre'] ?>" 
+        <a href="http://es.wikipedia.org/wiki/{{ nombre }}" 
            class="clsVentanaIFrame clsBoton" rel="Wikipedia">{{ nombre }}</a>
     </h3>
     <table border="1">

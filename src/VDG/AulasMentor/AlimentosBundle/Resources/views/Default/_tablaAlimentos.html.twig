@@ -10,7 +10,7 @@
     {% for alimento in alimentos %}
     <tr>
         <td><a href="{{ path('VAMAB_ver', {'id':alimento.id}) }}">
-            {{ nombre }}</a></td>
+            {{ alimento.nombre }}</a></td>
         <td>{{ alimento.energia }}</td>
         <td>{{ alimento.proteina }}</td>
         <td>{{ alimento.hidratocarbono }}</td>

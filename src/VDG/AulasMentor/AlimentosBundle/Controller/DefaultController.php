@@ -4,7 +4,8 @@ namespace VDG\AulasMentor\AlimentosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-use VDG\AulasMentor\AlimentosBundle\Config;
+use VDG\AulasMentor\AlimentosBundle\Model\Model;
+use VDG\AulasMentor\AlimentosBundle\Config\Config;
 
 class DefaultController extends Controller
 {
@@ -19,18 +20,22 @@ class DefaultController extends Controller
 
     public function listarAction()
     {
-        $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario, Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
-        
+        $m = new Model(
+                Config::$mvc_bd_nombre, 
+                Config::$mvc_bd_usuario, 
+                Config::$mvc_bd_clave, 
+                Config::$mvc_bd_hostname);
         $params = array(
             'alimentos' => $m->dameAlimentos(),
         );
+        
         return $this->render('VDGAulasMentorAlimentosBundle:Default:mostrarAlimentos.html.twig', $params);
     }
     
     public function insertarAction(){
         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario, Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
         $params = array('nombre'=>'', 'energia'=>'', 'proteina'=>'', 'hc'=>'', 'fibra'=>'', 'grasa'=>'',);
-        if ($SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             // comprobamos los campos del formulario
             if ($m->insertarAlimento($_POST['nombre'], $_POST['proteina'], $_POST['hc'], $_POST['fibra'], $_POST['grasa'])){
                 $params['mensaje'] = 'Alimento insertado correctamente.';
@@ -56,7 +61,7 @@ class DefaultController extends Controller
             $params['nombre'] = $_POST['nombre'];
             $params['resultado'] = $m->buscarPorNombre($_POST['nombre']);
         }
-        return $this->render('VDGAulasMentorAlimentosBundle:Default:buscarAlimentos.html.twig', $params);
+        return $this->render('VDGAulasMentorAlimentosBundle:Default:buscarPorNombre.html.twig', $params);
     }
     
     public function verAction($id){
