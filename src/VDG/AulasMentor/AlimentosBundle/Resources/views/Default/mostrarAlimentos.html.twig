@@ -1,0 +1,5 @@
+{% extends 'VDGAulasMentosAlimentosBundle:Default:layout.html.twig' %}
+
+{% block contenido %}
+    {% include 'VDGAulasMentorAlimentosBundle:Default:_tablaAlimentos.html.twig' with {'alimentos': resultado} %}
+{% endblock %}

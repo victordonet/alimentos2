@@ -1,0 +1,4 @@
+vdg_aulas_mentor_alimentos:
+    resource: "@VDGAulasMentorAlimentosBundle/Resources/config/routing.yml"
+    prefix:   /alimentos
+

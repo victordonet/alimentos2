@@ -1,0 +1,19 @@
+VAMAB_homepage:
+    pattern: /
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:index }
+    
+VAMAB_listar:
+    pattern: /listar
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:listar }
+
+VAMAB_insertar:
+    pattern: /insertar
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:insertar }
+    
+VAMAB_buscar:
+    pattern: /buscar
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:buscarPorNombre }
+
+VAMAB_ver:
+    pattern: /ver/{id}
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:ver }
