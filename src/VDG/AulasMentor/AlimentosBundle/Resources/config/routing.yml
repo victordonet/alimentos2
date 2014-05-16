@@ -14,6 +14,14 @@ VAMAB_buscar:
     pattern: /buscar
     defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:buscarPorNombre }
 
+VAMAB_buscarEnergia:
+    pattern: /buscarEnergia
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:buscarPorEnergia }
+
+VAMAB_buscarCombinada:
+    pattern: /buscarCombinada
+    defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:buscarCombinada }
+
 VAMAB_ver:
     pattern: /ver/{id}
     defaults: { _controller: VDGAulasMentorAlimentosBundle:Default:ver }

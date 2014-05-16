@@ -37,50 +37,49 @@ class __TwigTemplate_11a3b96e73fdbaf110fb8192eb0acf7174b64f3401e6ffac45171f4fd6e
     ";
         }
         // line 7
-        echo "    <br/>
-    <form name=\"formInsertar\" action=\"";
-        // line 8
+        echo "    <form name=\"formInsertar\" action=\"";
         echo $this->env->getExtension('routing')->getPath("VAMAB_insertar");
         echo "\" method=\"POST\">
+        <h3>Insertar nuevo alimento</h3>
         <table>
-            <tr><td colspan=\"2\" align=\"center\">* Los valores deben referirse a 100 g del alimento</td></tr>
+            <tr><td colspan=\"2\" align=\"center\"><p>* Los valores deben referirse a 100 g del alimento</p></td></tr>
             <tr>
-                <th>Nombre</th>
+                <th align=\"right\">Nombre</th>
                 <td><input type=\"text\" name=\"nombre\" value=\"";
         // line 13
         echo twig_escape_filter($this->env, (isset($context["nombre"]) ? $context["nombre"] : $this->getContext($context, "nombre")), "html", null, true);
         echo "\" /></td>
             </tr>
             <tr>
-                <th>Energ&iacute;a (Kcal)</th>
+                <th align=\"right\">Energ&iacute;a (Kcal)</th>
                 <td><input type=\"text\" name=\"energia\" value=\"";
         // line 17
         echo twig_escape_filter($this->env, (isset($context["energia"]) ? $context["energia"] : $this->getContext($context, "energia")), "html", null, true);
         echo "\" /></td>
             </tr>
             <tr>
-                <th>Proteina (g)</th>
+                <th align=\"right\">Proteina (g)</th>
                 <td><input type=\"text\" name=\"proteina\" value=\"";
         // line 21
         echo twig_escape_filter($this->env, (isset($context["proteina"]) ? $context["proteina"] : $this->getContext($context, "proteina")), "html", null, true);
         echo "\" /></td>
             </tr>
             <tr>
-                <th>H. de carbono (g)</th>
+                <th align=\"right\">H. de carbono (g)</th>
                 <td><input type=\"text\" name=\"hc\" value=\"";
         // line 25
         echo twig_escape_filter($this->env, (isset($context["hc"]) ? $context["hc"] : $this->getContext($context, "hc")), "html", null, true);
         echo "\" /></td>
             </tr>
             <tr>
-                <th>Fibra (g)</th>
+                <th align=\"right\">Fibra (g)</th>
                 <td><input type=\"text\" name=\"fibra\" value=\"";
         // line 29
         echo twig_escape_filter($this->env, (isset($context["fibra"]) ? $context["fibra"] : $this->getContext($context, "fibra")), "html", null, true);
         echo "\" /></td>
             </tr>
             <tr>
-                <th>Grasa total (g)</th>
+                <th align=\"right\">Grasa total (g)</th>
                 <td><input type=\"text\" name=\"grasa\" value=\"";
         // line 33
         echo twig_escape_filter($this->env, (isset($context["grasa"]) ? $context["grasa"] : $this->getContext($context, "grasa")), "html", null, true);
@@ -107,6 +106,6 @@ class __TwigTemplate_11a3b96e73fdbaf110fb8192eb0acf7174b64f3401e6ffac45171f4fd6e
 
     public function getDebugInfo()
     {
-        return array (  86 => 33,  79 => 29,  72 => 25,  65 => 21,  58 => 17,  51 => 13,  43 => 8,  40 => 7,  34 => 5,  31 => 4,  28 => 3,);
+        return array (  85 => 33,  78 => 29,  71 => 25,  64 => 21,  57 => 17,  50 => 13,  40 => 7,  34 => 5,  31 => 4,  28 => 3,);
     }
 }

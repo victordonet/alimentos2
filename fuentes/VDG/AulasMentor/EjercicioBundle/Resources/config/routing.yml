@@ -1,0 +1,7 @@
+vame_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: VDGAulasMentorEjercicioBundle:Default:index }
+
+vame_saludo:
+    pattern: /saludo
+    defaults: { _controller: VDGAulasMentorEjercicioBundle:Default:saludo }

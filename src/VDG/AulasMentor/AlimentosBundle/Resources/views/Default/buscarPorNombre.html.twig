@@ -2,10 +2,12 @@
 
 {% block contenido %}
 <form name="formBusqueda" action="{{ path('VAMAB_buscar') }}" method="POST">
+    <h3>Busqueda por NOMBRE de alimento</h3>
     <table>
+        <tr><td colspan="2" align="center"><p>(puedes utilizar '%' como comod&iacute;n)</p></td></tr>
         <tr>
-            <th>nombre alimento:</th>
-            <td><input type="text" name="nombre" value="{{ nombre }}">(puedes utilizar '%' como comod&iacute;n)</td>
+            <th>Nombre del alimento:</th>
+            <td><input type="text" name="nombre" value="{{ nombre }}"></td>
             <td><input type="submit" value="buscar"></td>
         </tr>
     </table>

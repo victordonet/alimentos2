@@ -135,6 +135,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/fuentes')) {
+            // vame_homepage
+            if (0 === strpos($pathinfo, '/fuentes/hello') && preg_match('#^/fuentes/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vame_homepage')), array (  '_controller' => 'VDG\\AulasMentor\\EjercicioBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // vame_saludo
+            if ($pathinfo === '/fuentes/saludo') {
+                return array (  '_controller' => 'VDG\\AulasMentor\\EjercicioBundle\\Controller\\DefaultController::saludoAction',  '_route' => 'vame_saludo',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/alimentos')) {
             // VAMAB_homepage
             if (rtrim($pathinfo, '/') === '/alimentos') {
@@ -155,9 +168,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'VDG\\AulasMentor\\AlimentosBundle\\Controller\\DefaultController::insertarAction',  '_route' => 'VAMAB_insertar',);
             }
 
-            // VAMAB_buscar
-            if ($pathinfo === '/alimentos/buscar') {
-                return array (  '_controller' => 'VDG\\AulasMentor\\AlimentosBundle\\Controller\\DefaultController::buscarPorNombreAction',  '_route' => 'VAMAB_buscar',);
+            if (0 === strpos($pathinfo, '/alimentos/buscar')) {
+                // VAMAB_buscar
+                if ($pathinfo === '/alimentos/buscar') {
+                    return array (  '_controller' => 'VDG\\AulasMentor\\AlimentosBundle\\Controller\\DefaultController::buscarPorNombreAction',  '_route' => 'VAMAB_buscar',);
+                }
+
+                // VAMAB_buscarEnergia
+                if ($pathinfo === '/alimentos/buscarEnergia') {
+                    return array (  '_controller' => 'VDG\\AulasMentor\\AlimentosBundle\\Controller\\DefaultController::buscarPorEnergiaAction',  '_route' => 'VAMAB_buscarEnergia',);
+                }
+
+                // VAMAB_buscarCombinada
+                if ($pathinfo === '/alimentos/buscarCombinada') {
+                    return array (  '_controller' => 'VDG\\AulasMentor\\AlimentosBundle\\Controller\\DefaultController::buscarCombinadaAction',  '_route' => 'VAMAB_buscarCombinada',);
+                }
+
             }
 
             // VAMAB_ver

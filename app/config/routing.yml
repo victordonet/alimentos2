@@ -1,3 +1,7 @@
+vdg_aulas_mentor_ejercicio:
+    resource: "@VDGAulasMentorEjercicioBundle/Resources/config/routing.yml"
+    prefix:   /fuentes
+
 vdg_aulas_mentor_alimentos:
     resource: "@VDGAulasMentorAlimentosBundle/Resources/config/routing.yml"
     prefix:   /alimentos

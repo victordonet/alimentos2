@@ -8,6 +8,8 @@ use Composer\Autoload\ClassLoader;
  */
 $loader = require __DIR__.'/../vendor/autoload.php';
 
+$loader->add('VDG\\AulasMentor\\EjercicioBundle',__DIR__.'/../fuentes');
+
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 return $loader;

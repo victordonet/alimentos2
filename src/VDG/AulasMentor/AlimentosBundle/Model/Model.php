@@ -34,9 +34,91 @@ class Model {
     public function buscarPorNombre($nombre) {
         $nombre = htmlspecialchars($nombre);
         $sql = "select * from alimentos where nombre like '" . $nombre . "' order by energia desc";
-        $result = mysql_query($sql, $this->conexion);
+        $result = mysqli_query($this->conexion, $sql);
         $alimentos = array();
-        while ($row = mysql_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $alimentos[] = $row;
+        }
+        return $alimentos;
+    }
+
+    public function buscarPorEnergia($energia) {
+        $energia = htmlspecialchars($energia);
+        $sql = "select * from alimentos where energia = '" . $energia . "' order by nombre desc";
+        $result = mysqli_query($this->conexion, $sql);
+        $alimentos = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $alimentos[] = $row;
+        }
+        return $alimentos;
+    }
+    
+    public function buscarCombinada($param){
+        $param['nombre'] = htmlspecialchars($param['nombre']);
+        $param['energia'] = htmlspecialchars($param['energia']);
+        $param['proteina'] = htmlspecialchars($param['proteina']);
+        $param['hc'] = htmlspecialchars($param['hc']);
+        $param['fibra'] = htmlspecialchars($param['fibra']);
+        $param['grasa'] = htmlspecialchars($param['grasa']);
+        $contenido = "%";
+        $sql = "select * from alimentos where";
+        if ($param['nombre'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND nombre like '" . $param['nombre'] . "'";
+            } else {
+                $sql = $sql . " nombre like '" . $param['nombre'] . "'";
+                $contenido = "";
+            }
+        }
+        if ($param['energia'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND energia = '" . $param['energia'] . "'";
+            } else {
+                $sql = $sql . " energia = '" . $param['energia'] . "'";
+                $contenido = "";
+            }
+        }
+        if ($param['proteina'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND proteina = '" . $param['proteina'] . "'";
+            } else {
+                $sql = $sql . " proteina = '" . $param['proteina'] . "'";
+                $contenido = "";
+            }
+        }
+        if ($param['hc'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND hidratocarbono = '" . $param['hc'] . "'";
+            } else {
+                $sql = $sql . " hidratocarbono = '" . $param['hc'] . "'";
+                $contenido = "";
+            }
+        }
+        if ($param['fibra'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND fibra = '" . $param['fibra'] . "'";
+            } else {
+                $sql = $sql . " fibra = '" . $param['fibra'] . "'";
+                $contenido = "";
+            }
+        }
+        if ($param['grasa'] !== ""){
+            if ($contenido === ""){
+                $sql = $sql . " AND grasatotal = '" . $param['grasa'] . "'";
+            } else {
+                $sql = $sql . " grasatotal = '" . $param['grasa'] . "'";
+                $contenido = "";
+            }
+        }
+
+        if ($contenido === ""){
+            $sql = $sql . " order by nombre desc";
+        } else {
+            $sql = $sql . " nombre like '%' order by nombre desc";
+        }
+        $result = mysqli_query($this->conexion, $sql);
+        $alimentos = array();
+        while ($row = mysqli_fetch_assoc($result)) {
             $alimentos[] = $row;
         }
         return $alimentos;
@@ -45,9 +127,9 @@ class Model {
     public function dameAlimento($id) {
         $id = htmlspecialchars($id);
         $sql = "select * from alimentos where id=" . $id;
-        $result = mysql_query($sql, $this->conexion);
-        $alimentos = array();
-        $row = mysql_fetch_assoc($result);
+        $result = mysqli_query($this->conexion, $sql);
+
+        $row = mysqli_fetch_assoc($result);
         return $row;
     }
 

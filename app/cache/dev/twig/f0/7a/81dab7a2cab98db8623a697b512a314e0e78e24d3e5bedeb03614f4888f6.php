@@ -31,22 +31,24 @@ class __TwigTemplate_f07a81dab7a2cab98db8623a697b512a314e0e78e24d3e5bedeb03614f4
         echo "<form name=\"formBusqueda\" action=\"";
         echo $this->env->getExtension('routing')->getPath("VAMAB_buscar");
         echo "\" method=\"POST\">
+    <h3>Busqueda por NOMBRE de alimento</h3>
     <table>
+        <tr><td colspan=\"2\" align=\"center\"><p>(puedes utilizar '%' como comod&iacute;n)</p></td></tr>
         <tr>
-            <th>nombre alimento:</th>
+            <th>Nombre del alimento:</th>
             <td><input type=\"text\" name=\"nombre\" value=\"";
-        // line 8
+        // line 10
         echo twig_escape_filter($this->env, (isset($context["nombre"]) ? $context["nombre"] : $this->getContext($context, "nombre")), "html", null, true);
-        echo "\">(puedes utilizar '%' como comod&iacute;n)</td>
+        echo "\"></td>
             <td><input type=\"submit\" value=\"buscar\"></td>
         </tr>
     </table>
 </form>
             
 ";
-        // line 14
+        // line 16
         if ((isset($context["resultado"]) ? $context["resultado"] : $this->getContext($context, "resultado"))) {
-            // line 15
+            // line 17
             echo "    ";
             $this->env->loadTemplate("VDGAulasMentorAlimentosBundle:Default:_tablaAlimentos.html.twig")->display(array_merge($context, array("alimentos" => (isset($context["resultado"]) ? $context["resultado"] : $this->getContext($context, "resultado")))));
         }
@@ -64,6 +66,6 @@ class __TwigTemplate_f07a81dab7a2cab98db8623a697b512a314e0e78e24d3e5bedeb03614f4
 
     public function getDebugInfo()
     {
-        return array (  50 => 15,  48 => 14,  39 => 8,  31 => 4,  28 => 3,);
+        return array (  52 => 17,  50 => 16,  41 => 10,  31 => 4,  28 => 3,);
     }
 }

@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="VDGAulasMentorAlimentosBundle">VDG\AulasMentor\AlimentosBundle\VDGAulasMentorAlimentosBundle</parameter>
+      <parameter key="VDGAulasMentorEjercicioBundle">VDG\AulasMentor\EjercicioBundle\VDGAulasMentorEjercicioBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2720,6 +2721,10 @@
       <call method="addPath">
         <argument>C:\wamp\www\alimentos2\src\VDG\AulasMentor\AlimentosBundle/Resources/views</argument>
         <argument>VDGAulasMentorAlimentos</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\alimentos2\fuentes\VDG\AulasMentor\EjercicioBundle/Resources/views</argument>
+        <argument>VDGAulasMentorEjercicio</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\alimentos2\src\Acme\DemoBundle/Resources/views</argument>

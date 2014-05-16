@@ -1,0 +1,40 @@
+{% extends 'VDGAulasMentorAlimentosBundle:Default:layout.html.twig' %}
+
+{% block contenido %}
+<form name="formBusqueda" action="{{ path('VAMAB_buscarCombinada') }}" method="POST">
+    <h3>Busqueda COMBINADA</h3>
+    <table>
+        <tr><td colspan="2" align="center"><p>(puedes utilizar '%' como comod&iacute;n)</p></td></tr>
+        <tr>
+            <th align="right">Nombre:</th>
+            <td><input type="text" name="nombre" value="{{ nombre }}"></td>
+        </tr>
+        <tr>
+            <th align="right">Energ&iacutea:</th>
+            <td><input type="text" name="energia" value="{{ energia }}"></td>
+        </tr>
+        <tr>
+            <th align="right">Proteina:</th>
+            <td><input type="text" name="proteina" value="{{ proteina }}"></td>
+        </tr>
+        <tr>
+            <th align="right">Hidratos de carbono:</th>
+            <td><input type="text" name="hc" value="{{ hc }}"></td>
+        </tr>
+        <tr>
+            <th align="right">fibra:</th>
+            <td><input type="text" name="fibra" value="{{ fibra }}"></td>
+        </tr>
+        <tr>
+            <th align="right">grasa:</th>
+            <td><input type="text" name="grasa" value="{{ grasa }}"></td>
+        </tr>
+        <tr><td colspan="2" align="center"><input type="submit" value="buscar"></td></tr>
+    </table>
+</form>
+            
+{% if resultado %}
+    {% include 'VDGAulasMentorAlimentosBundle:Default:_tablaAlimentos.html.twig' with {'alimentos': resultado} %}
+{% endif %}
+{% endblock %}
+

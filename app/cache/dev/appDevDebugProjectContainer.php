@@ -2949,6 +2949,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\wamp\\www\\alimentos2\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('C:\\wamp\\www\\alimentos2\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('C:\\wamp\\www\\alimentos2\\src\\VDG\\AulasMentor\\AlimentosBundle/Resources/views', 'VDGAulasMentorAlimentos');
+        $instance->addPath('C:\\wamp\\www\\alimentos2\\fuentes\\VDG\\AulasMentor\\EjercicioBundle/Resources/views', 'VDGAulasMentorEjercicio');
         $instance->addPath('C:\\wamp\\www\\alimentos2\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\wamp\\www\\alimentos2\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\wamp\\www\\alimentos2\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3434,6 +3435,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'VDGAulasMentorAlimentosBundle' => 'VDG\\AulasMentor\\AlimentosBundle\\VDGAulasMentorAlimentosBundle',
+                'VDGAulasMentorEjercicioBundle' => 'VDG\\AulasMentor\\EjercicioBundle\\VDGAulasMentorEjercicioBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
